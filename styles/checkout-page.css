@@ -1,0 +1,33 @@
+.checkoutPage {
+  width: 50%;
+}
+
+.checkout {
+  align-self: center;
+  margin: 2% 0% 0% 0%;
+}
+
+.inputForm {
+  height: 6%;
+  margin: 2.5% 0 2.5% 0;
+}
+
+.checkoutDetails {
+  height: 70%;
+}
+
+.sizeBtn {
+  font-size: 100%;
+  height: 80%;
+  width: 35%;
+}
+
+.orderSummary {
+  align-self: center;
+  font-family: biryani;
+  font-size: 25px;
+  height: fit-content;
+  margin-top: 1%;
+  padding: 1%;
+  width: fit-content;
+}

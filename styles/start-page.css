@@ -1,0 +1,137 @@
+.startUpPage,
+.contentWindow,
+.loginPage {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.startUpPage,
+.loginPage {
+  align-items: center;
+  background-image: url("../assets/bg.jpg");
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.contentWindow {
+  background-image: url("../assets/contentBG.jpg");
+  border: 10px solid #fce397;
+  border-radius: 60px;
+  height: 80%;
+  width: 50%;
+}
+
+.fontStyles {
+  align-self: flex-end;
+  font-family: Biryani;
+  font-size: 250%;
+  font-weight: 600;
+  height: 11%;
+  margin: 3% 5% 0 0;
+  width: fit-content;
+}
+
+.appName {
+  color: #fdf0ca;
+  font-family: Bahianita;
+  font-size: 450%;
+  height: 15%;
+  margin-top: 4%;
+}
+
+.fontColor {
+  color: #f9555f;
+}
+
+.textColor {
+  color: #114d93;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  height: 15%;
+  justify-content: center;
+  margin-top: 6%;
+  width: 100%;
+}
+
+.joinButton {
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: Biryani;
+  font-size: 200%;
+  font-weight: 500;
+  height: 75%;
+  width: 30%;
+}
+
+.loginButton {
+  background-color: #f9d470;
+  border: 3px solid black;
+  color: black;
+  margin-right: 5%;
+}
+
+.signUpButton {
+  background-color: transparent;
+  border: 3px solid white;
+  color: white;
+}
+
+@media all and (max-width: 1175px) {
+  .contentWindow {
+    background-image: none;
+    background-color: #f2ba27;
+  }
+
+  .fontStyles {
+    align-self: center;
+    font-size: 200%;
+    font-weight: 600;
+    height: 11%;
+    margin-top: 4%;
+    width: fit-content;
+  }
+
+  .appName {
+    font-size: 350%;
+    margin-top: 6%;
+  }
+
+  .buttons {
+    margin-top: 8%;
+  }
+
+  .joinButton {
+    font-size: 150%;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .fontStyles {
+    font-size: 150%;
+    margin-top: 6%;
+  }
+
+  .appName {
+    font-size: 300%;
+  }
+
+  .buttons {
+    margin-top: 10%;
+  }
+
+  .joinButton {
+    font-size: 100%;
+  }
+}
+
+@media all and (max-width: 650px) {
+  .contentWindow {
+    width: 50%;
+  }
+}

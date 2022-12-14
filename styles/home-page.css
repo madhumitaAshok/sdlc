@@ -1,0 +1,304 @@
+.homePage {
+  background-image: url("../assets/homePage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.navigationBar,
+.categoryBar {
+  align-items: center;
+  align-self: center;
+  background-color: #f2ba27;
+  display: flex;
+  flex-direction: row;
+  height: 8%;
+  width: 99.8%;
+}
+
+.navigationBar {
+  margin-top: 0.1%;
+}
+
+.logo {
+  height: 70%;
+  margin-left: 1.5%;
+  width: 3%;
+}
+
+.applicationName {
+  border: 2px transparent solid;
+  color: black;
+  font-family: Bahianita;
+  font-size: 350%;
+  font-weight: 600;
+  margin-left: 0.2%;
+}
+
+.searchBar {
+  background-color: #fdf0ca;
+  border: none;
+  border-radius: 30px;
+  font-size: 150%;
+  height: 20%;
+  margin: 0 2% 0 3%;
+  padding: 1%;
+  width: 52%;
+}
+
+.searchIcon {
+  height: 25px;
+  position: absolute;
+  right: 25%;
+  top: 3%;
+  width: 30px;
+}
+
+.findIcon {
+  height: 25px;
+  position: absolute;
+  right: 24.4%;
+  width: 30px;
+}
+
+.category {
+  align-items: center;
+  border: 2px transparent solid;
+  display: flex;
+  font-family: Biryani;
+  font-size: 175%;
+  font-weight: 600;
+  height: 70%;
+  margin-left: 1%;
+  padding: 0.2%;
+}
+
+.category:hover {
+  border-color: black;
+  border-radius: 20px;
+}
+
+.borderNone:hover {
+  border-color: transparent;
+  cursor: context-menu;
+}
+
+.hashLine {
+  color: #eadeb8;
+  font-family: Bahianita;
+  font-size: 250%;
+  font-weight: 600;
+  margin-left: 40%;
+}
+
+.boxContainer {
+  align-items: center;
+  display: flex;
+  height: 80%;
+  justify-content: center;
+  width: 99.8%;
+}
+
+.cardsContainer {
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 5px solid #fce397;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 93%;
+  width: 60%;
+}
+
+.heading {
+  color: #f9838b;
+  display: flex;
+  font-family: Biryani;
+  font-size: 200%;
+  font-weight: 600;
+  height: 8%;
+  justify-content: center;
+  width: 80%;
+}
+
+.productContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 92%;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.searchItem {
+  align-items: center;
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 92%;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.searchBox {
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0 2rem #fce397;
+  border-radius: 15px;
+  display: none;
+  flex-direction: column;
+  height: 55%;
+  width: 55%;
+}
+
+.showBox {
+  display: flex;
+}
+
+.productTile {
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0 2rem #fce397;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 45%;
+  width: 45%;
+}
+
+.productTile:hover {
+  transition: 0.1s ease-out;
+  transform: scale(1.1, 1.02);
+  z-index: 4;
+}
+
+.searchBox:hover {
+  transition: 0.1s ease-out;
+  transform: scale(1.1, 1.02);
+  z-index: 4;
+}
+
+.productImageContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.productImage {
+  align-self: center;
+  height: 115px;
+  margin-top: 4%;
+  width: 100px;
+}
+
+.detailsStyle {
+  font-family: Biryani;
+}
+
+.productDetails,
+.productQuantityDetails {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.productDetails {
+  margin-top: 2px;
+  width: 300px;
+}
+
+.productName {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.productPrice {
+  margin-top: 9px;
+  font-size: 15px;
+}
+
+.quantity,
+.productQuantity,
+.btnColor {
+  font-family: Biryani;
+  font-size: 18px;
+  height: 40px;
+}
+
+.quantity,
+.btnColor {
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  padding: 12px;
+}
+
+.quantity {
+  background-color: #f2ba27;
+}
+
+.btnColor {
+  background-color: #fee496;
+}
+
+.marginTop {
+  margin-top: 3%;
+}
+
+.stylingText {
+  font-size: 18px;
+}
+
+.prizeSize {
+  color: green;
+  font-size: 25px;
+}
+
+.productQuantity {
+  background-color: white;
+  border: 3px solid #fee496;
+  border-radius: 10px;
+  width: 55px;
+}
+
+.deleteLogo {
+  align-self: center;
+  height: 35px;
+  width: 40px;
+}
+
+.productQuantityDetails {
+  margin-top: 2px;
+  width: 300px;
+}
+
+.outOfStock {
+  display: flex;
+  height: 57px;
+  justify-content: center;
+  width: 100%;
+}
+
+.osImage {
+  width: 135px;
+}
+
+.alignTop {
+  margin-top: 0px;
+}
+
+.logo,
+.applicationName,
+.searchIcon,
+.category,
+.quantity,
+.continueButton,
+.existUserLogin,
+.deleteLogo,
+.deliveryBtn {
+  cursor: pointer;
+}

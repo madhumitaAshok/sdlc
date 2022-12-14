@@ -1,0 +1,60 @@
+.categoryPage {
+  background-color: #ffcd46;
+  background-image: none;
+}
+
+.gridContainer {
+  align-self: center;
+  background-color: #f9f9f9;
+  border: 5px solid #fce397;
+  border-radius: 15px;
+  display: grid;
+  gap: 35px;
+  grid-template-columns: auto auto auto auto;
+  height: 70%;
+  justify-content: center;
+  margin-top: 1%;
+  min-height: 65%;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  padding: 2%;
+  width: 90%;
+}
+
+.productCard {
+  background-color: white;
+  box-shadow: 0 0 2rem #fce397;
+  border-radius: 15px;
+  height: 250px;
+}
+
+.productCard:hover {
+  transition: 0.1s ease-out;
+  transform: scale(1.1, 1.02);
+  z-index: 4;
+}
+
+.bgColor {
+  background-color: #fee496;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  margin-right: 20px;
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f2ba27;
+  border-radius: 4px;
+}
+
+.displayNone {
+  display: none;
+}

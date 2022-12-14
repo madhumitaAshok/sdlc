@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/logo.png"
+      alt="Logo icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bahianita"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Biryani"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Happy Mart App</title>
+  </head>
+  <body>
+    <section id="startUpPage" class="startUpPage">
+      <div class="contentWindow">
+        <div class="fontStyles appName">HAPPY MART</div>
+        <div class="fontStyles">
+          Get the <span class="fontColor">Fastest</span>
+        </div>
+        <div class="fontStyles">Delivery Groceries</div>
+        <div class="fontStyles textColor">@ home</div>
+        <div class="buttons">
+          <button
+            class="joinButton loginButton"
+            onclick="directToLoginPage(startUpPage)"
+          >
+            Login
+          </button>
+          <button
+            class="joinButton signUpButton"
+            onclick="directToSignUpPage(startUpPage)"
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="loginPage" class="loginPage">
+      <div id="loginSnackbar" class="loginSnackbar">
+        User Account created successfully.
+      </div>
+      <div class="signInWindow contentWindow">
+        <div class="appTitle">HAPPY MART</div>
+        <div class="signUpText">Login</div>
+        <div class="signupForm">
+          <label for="luser-email" class="contentStyles starLess">Email </label>
+          <input
+            type="email"
+            placeholder=""
+            id="luser-email"
+            class="formInput"
+            required
+          />
+          <label for="lpassword" class="contentStyles starLess"
+            >Password
+          </label>
+          <input
+            type="password"
+            placeholder=""
+            id="lpassword"
+            class="formInput"
+            autocomplete="off"
+            required
+          />
+          <div class="mandatory">* Mandatory fields</div>
+        </div>
+        <button class="continueButton" onclick="loginVerification()">
+          Continue
+        </button>
+        <div class="existingUser newUser">
+          New to Happy Mart ?
+          <button
+            class="existUserLogin"
+            onclick="directToSignUpPage(loginPage)"
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="signUpPage" class="loginPage signUpPage">
+      <div id="snackbar" class="snackbar">User Already Exists.Try to login</div>
+      <div class="signInWindow contentWindow">
+        <div class="appTitle appHeading">HAPPY MART</div>
+        <div class="signUpHeading">Create Account</div>
+        <div class="signupForm formReduce">
+          <label for="susername" class="contentStyles reduce">Name</label>
+          <input
+            type="text"
+            placeholder=""
+            id="susername"
+            maxlength="15"
+            class="formInput boxReduce"
+            required
+          />
+          <label for="suser-email" class="contentStyles reduce">Email </label>
+          <input
+            type="email"
+            placeholder=""
+            id="suser-email"
+            class="formInput boxReduce"
+            required
+          />
+          <label for="spassword" class="contentStyles reduce">Password </label>
+          <input
+            type="password"
+            placeholder=""
+            id="spassword"
+            class="formInput boxReduce"
+            maxlength="15"
+            autocomplete="off"
+            required
+          />
+          <div class="password-requirement">
+            <ul>
+              <li>Minimum 8 and Maximum 15 characters</li>
+              <li>Atleast 1 special character,1 alphabet,1 number</li>
+            </ul>
+          </div>
+          <div class="mandatory">* Mandatory fields</div>
+        </div>
+        <button class="continueButton" onclick="signupValidation()">
+          Submit
+        </button>
+        <div class="existingUser">
+          Already a Happy Mart user?
+          <button
+            class="existUserLogin"
+            onclick="directToLoginPage(signUpPage)"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="homePage" class="homePage">
+      <div class="navigationBar">
+        <img
+          class="logo"
+          src="./assets/logo.png"
+          alt="App Logo"
+          onclick="directToHomePage(homePage)"
+        />
+        <div class="applicationName" onclick="directToHomePage(homePage)">
+          HAPPY MART
+        </div>
+        <img
+          class="logo"
+          src="./assets/home.png"
+          alt="Profile Logo"
+          onclick="directToHomePage(homePage)"
+        />
+        <div id="searchSnackBar" class="searchSnackBar">No items found</div>
+        <input
+          list="searchItems"
+          id="searchBar"
+          type="text"
+          class="searchBar"
+        />
+        <datalist id="searchItems"> </datalist>
+        <img
+          class="searchIcon findIcon"
+          src="./assets/search.png"
+          alt="Search Logo"
+          onclick="searchProductOtherPage(homePage,searchBar,searchSnackBar)"
+        />
+        <img
+          class="logo"
+          src="./assets/profile.png"
+          alt="Profile Logo"
+          onclick="hideAndDisplayProfile()"
+        />
+        <img
+          class="logo"
+          src="./assets/shopping-cart.png"
+          alt="Cart Logo"
+          onclick="directToCart(homePage)"
+        />
+      </div>
+      <div class="categoryBar">
+        <!-- <div class="category borderNone">Categories</div> -->
+        <div
+          class="category"
+          onclick="directToShoppingPage('grocery',homePage)"
+        >
+          Groceries
+        </div>
+        <div class="category" onclick="directToShoppingPage('fruits',homePage)">
+          Fruits
+        </div>
+        <div
+          class="category"
+          onclick="directToShoppingPage('vegetables',homePage)"
+        >
+          Vegetables
+        </div>
+        <div
+          class="category"
+          onclick="directToShoppingPage('houseHold',homePage)"
+        >
+          Household
+        </div>
+        <div class="hashLine"># Shopping Made Easy</div>
+      </div>
+      <div class="boxContainer">
+        <div class="cardsContainer">
+          <div id="top" class="heading">Top Picks For You</div>
+          <div id="container" class="productContainer">
+            <div class="productTile">
+              <img
+                class="productImage"
+                src="./assets/chocolate.jpg"
+                alt="productImage"
+              />
+              <div class="productDetails">
+                <div class="detailsStyle productName marginTop">Chocolate</div>
+                <div class="detailsStyle productPrice prizeSize">
+                  Rs.50 /box
+                </div>
+              </div>
+              <div class="productQuantityDetails alignTop">
+                <button
+                  class="quantity"
+                  onclick="addToCartFromHome(homePage,'Chocolate')"
+                >
+                  Buy Now
+                </button>
+                <s class="detailsStyle stylingText">Rs.65 /box</s>
+              </div>
+            </div>
+            <div class="productTile">
+              <img
+                class="productImage"
+                src="./assets/cherry.jpg"
+                alt="productImage"
+              />
+              <div class="productDetails">
+                <div class="detailsStyle productName marginTop">Cherry</div>
+                <div class="detailsStyle productPrice prizeSize">
+                  Rs.325 /box
+                </div>
+              </div>
+              <div class="productQuantityDetails">
+                <button
+                  class="quantity"
+                  onclick="addToCartFromHome(homePage,'Cherry')"
+                >
+                  Buy Now
+                </button>
+                <s class="detailsStyle stylingText">Rs.350 /box</s>
+              </div>
+            </div>
+            <div class="productTile">
+              <img
+                class="productImage"
+                src="./assets/bellpeppers.jpg"
+                alt="productImage"
+              />
+              <div class="productDetails">
+                <div class="detailsStyle productName marginTop">
+                  Bellpeppers
+                </div>
+                <div class="detailsStyle productPrice prizeSize">
+                  Rs.160 /box
+                </div>
+              </div>
+              <div class="productQuantityDetails">
+                <button
+                  class="quantity"
+                  onclick="addToCartFromHome(homePage,'Bellpeppers')"
+                >
+                  Buy Now
+                </button>
+                <s class="detailsStyle stylingText">Rs.190 /box</s>
+              </div>
+            </div>
+            <div class="productTile">
+              <img
+                class="productImage"
+                src="./assets/towel.jpg"
+                alt="productImage"
+              />
+              <div class="productDetails">
+                <div class="detailsStyle productName marginTop">Towel</div>
+                <div class="detailsStyle productPrice prizeSize">
+                  Rs.200 /box
+                </div>
+              </div>
+              <div class="productQuantityDetails">
+                <button
+                  class="quantity"
+                  onclick="addToCartFromHome(homePage,'Towel')"
+                >
+                  Buy Now
+                </button>
+                <s class="detailsStyle stylingText">Rs.250 /box</s>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="searchPage" class="homePage">
+      <div class="navigationBar">
+        <img
+          class="logo"
+          src="./assets/logo.png"
+          alt="App Logo"
+          onclick="directToHomePage(searchPage)"
+        />
+        <div class="applicationName" onclick="directToHomePage(searchPage)">
+          HAPPY MART
+        </div>
+        <img
+          class="logo"
+          src="./assets/home.png"
+          alt="Profile Logo"
+          onclick="directToHomePage(searchPage)"
+        />
+        <div id="searchSnackBar2" class="searchSnackBar">No items found</div>
+        <input
+          list="searchItems"
+          id="searchBarSearch"
+          type="text"
+          class="searchBar"
+        />
+        <datalist id="searchItems"> </datalist>
+        <img
+          class="searchIcon findIcon"
+          src="./assets/search.png"
+          alt="Search Logo"
+          onclick="searchProductOtherPage(searchPage,searchBarSearch,searchSnackBar2)"
+        />
+        <img
+          class="logo"
+          src="./assets/profile.png"
+          alt="Profile Logo"
+          onclick="hideAndDisplayProfile()"
+        />
+        <img
+          class="logo"
+          src="./assets/shopping-cart.png"
+          alt="Cart Logo"
+          onclick="directToCart(searchPage)"
+        />
+      </div>
+      <div class="categoryBar">
+        <!-- <div class="category borderNone">Categories</div> -->
+        <div
+          class="category"
+          onclick="directToShoppingPage('grocery',searchPage)"
+        >
+          Groceries
+        </div>
+        <div
+          class="category"
+          onclick="directToShoppingPage('fruits',searchPage)"
+        >
+          Fruits
+        </div>
+        <div
+          class="category"
+          onclick="directToShoppingPage('vegetables',searchPage)"
+        >
+          Vegetables
+        </div>
+        <div
+          class="category"
+          onclick="directToShoppingPage('houseHold',searchPage)"
+        >
+          Household
+        </div>
+        <div class="hashLine"># Shopping Made Easy</div>
+      </div>
+      <div class="boxContainer">
+        <div class="cardsContainer">
+          <div id="searchItem" class="searchItem"></div>
+        </div>
+      </div>
+    </section>
+    <section id="categoryPage" class="homePage categoryPage">
+      <div class="navigationBar">
+        <img
+          class="logo"
+          onclick="directToHomePage(categoryPage)"
+          src="./assets/logo.png"
+          alt="App Logo"
+        />
+        <div class="applicationName" onclick="directToHomePage(categoryPage)">
+          HAPPY MART
+        </div>
+        <img
+          class="logo"
+          onclick="directToHomePage(categoryPage)"
+          src="./assets/home.png"
+          alt="Profile Logo"
+        />
+        <div id="searchSnackBar3" class="searchSnackBar">No items found</div>
+        <input
+          list="searchItems"
+          id="searchBar2"
+          type="text"
+          class="searchBar"
+        />
+        <datalist id="searchItems"> </datalist>
+        <img
+          class="searchIcon findIcon"
+          src="./assets/search.png"
+          alt="Search Logo"
+          onclick="searchProductOtherPage(categoryPage,searchBar2,searchSnackBar3)"
+        />
+        <img
+          class="logo"
+          src="./assets/profile.png"
+          alt="Profile Logo"
+          onclick="hideAndDisplayProfile()"
+        />
+        <img
+          class="logo"
+          onclick="directToCart(categoryPage)"
+          src="./assets/shopping-cart.png"
+          alt="Cart Logo"
+        />
+      </div>
+      <div class="categoryBar">
+        <!-- <div class="category borderNone">Categories</div> -->
+        <div
+          id="grocery"
+          class="category"
+          onclick="categoryWiseCards('grocery')"
+        >
+          Groceries
+        </div>
+        <div id="fruits" class="category" onclick="categoryWiseCards('fruits')">
+          Fruits
+        </div>
+        <div
+          id="vegetables"
+          class="category"
+          onclick="categoryWiseCards('vegetables')"
+        >
+          Vegetables
+        </div>
+        <div
+          id="houseHold"
+          class="category"
+          onclick="categoryWiseCards('houseHold')"
+        >
+          Household
+        </div>
+        <div class="hashLine"># Shopping Made Easy</div>
+      </div>
+      <div id="gridContainer" class="gridContainer"></div>
+    </section>
+    <section id="profilePage" class="homePage categoryPage">
+      <div class="navigationBar">
+        <img
+          class="logo"
+          onclick="checkForCompletionAndDirectToHome(profilePage)"
+          src="./assets/logo.png"
+          alt="App Logo"
+        />
+        <div
+          class="applicationName"
+          onclick="checkForCompletionAndDirectToHome(profilePage)"
+        >
+          HAPPY MART
+        </div>
+        <img
+          class="logo"
+          src="./assets/home.png"
+          alt="Profile Logo"
+          onclick="checkForCompletionAndDirectToHome(profilePage)"
+        />
+        <div id="searchSnackBar7" class="searchSnackBar">No items found</div>
+        <input
+          list="searchItems"
+          id="searchBar7"
+          type="text"
+          class="searchBar"
+        />
+        <datalist id="searchItems"> </datalist>
+        <img
+          class="searchIcon findIcon"
+          src="./assets/search.png"
+          alt="Search Logo"
+          onclick="checkForCompletionAndDirectToSearchPage(profilePage, searchBar7, searchSnackBar7)"
+        />
+        <img
+          class="logo"
+          src="./assets/profile.png"
+          alt="Profile Logo"
+          onclick="checkForCompletionAndDirectToProfile()"
+        />
+        <img
+          class="logo"
+          onclick="checkForCompletionAndDirectToCart(profilePage)"
+          src="./assets/shopping-cart.png"
+          alt="Cart Logo"
+        />
+      </div>
+      <div class="profileContent">
+        <div class="signUpText profileName">My Account</div>
+        <div class="profile">
+          <div class="profileDetails">
+            <div>
+              <label for="username" class="details">Name </label>
+              <img
+                class="edit"
+                src="./assets/pencil.png"
+                alt="Edit icon"
+                onclick="pNameEdit()"
+              />
+            </div>
+            <input
+              type="text"
+              placeholder=""
+              id="pNmae"
+              class="form"
+              disabled="disabled"
+            />
+            <label for="user-email" class="details">E-Mail </label>
+            <input
+              type="email"
+              placeholder=""
+              id="pEmail"
+              class="form"
+              disabled="disabled"
+            />
+            <div>
+              <label for="address" class="details">Delivery Address </label>
+              <img
+                class="edit"
+                src="./assets/pencil.png"
+                alt="Edit icon"
+                onclick="deliveryAddressEdit()"
+              />
+            </div>
+            <input
+              type="text"
+              placeholder=""
+              id="pdoorNo"
+              class="form"
+              autocomplete="off"
+              disabled="disabled"
+            />
+            <input
+              type="text"
+              placeholder=""
+              id="parea"
+              class="form"
+              autocomplete="off"
+              disabled="disabled"
+            />
+            <input
+              type="text"
+              placeholder=""
+              id="pcity"
+              class="form"
+              autocomplete="off"
+              disabled="disabled"
+            />
+            <input
+              type="text"
+              placeholder=""
+              id="ppincode"
+              class="form"
+              autocomplete="off"
+              disabled="disabled"
+            />
+          </div>
+        </div>
+        <div class="buttons alignDiv">
+          <button
+            id="confirmBtn"
+            class="joinButton loginButton align displayNone"
+            onclick="updateProfileName()"
+          >
+            Confirm
+          </button>
+          <button
+            id="cancelBtn"
+            class="joinButton loginButton cancelBtn align displayNone"
+            onclick="noUpdate()"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="cartPage" class="homePage categoryPage">
+      <div class="navigationBar">
+        <img
+          class="logo"
+          onclick="directToHomePage(cartPage)"
+          src="./assets/logo.png"
+          alt="App Logo"
+        />
+        <div class="applicationName" onclick="directToHomePage(cartPage)">
+          HAPPY MART
+        </div>
+        <img
+          class="logo"
+          onclick="directToHomePage(cartPage)"
+          src="./assets/home.png"
+          alt="Profile Logo"
+        />
+        <div id="searchSnackBar5" class="searchSnackBar">No items found</div>
+        <input
+          list="searchItems"
+          id="searchBar4"
+          type="text"
+          class="searchBar"
+        />
+        <datalist id="searchItems"> </datalist>
+        <img
+          class="searchIcon findIcon"
+          src="./assets/search.png"
+          class="logo"
+          onclick="searchProductOtherPage(cartPage, searchBar4, searchSnackBar5)"
+          ;
+          src="./assets/shopping-cart.png"
+          alt="Cart Logo"
+        />
+        <img
+          class="logo"
+          src="./assets/profile.png"
+          alt="Profile Logo"
+          onclick="hideAndDisplayProfile()"
+        />
+      </div>
+      <div class="cartPage">
+        <div class="signUpText cart">Shopping Cart</div>
+        <div class="selectItems">
+          <input
+            type="checkbox"
+            id="checkBox"
+            class="checkBox topCheckBox"
+            checked
+          />
+          <label for="checkBox" class="select">Select all</label>
+          <img
+            class="deleteLogo empty"
+            src="./assets/remove.png"
+            alt="Remove icon"
+            onclick="emptyCart()"
+          />
+          <label class="select">Empty Cart</label>
+        </div>
+        <div class="cartContent">
+          <div id="cartItems" class="cartItems"></div>
+          <div class="priceDetails">
+            <div class="priceText">Price Details</div>
+            <div class="items">
+              <span id="no-of-items"> Price (0 items)</span>
+              <span class="cost" id="cost"></span>
+            </div>
+            <div class="items">
+              Delivery Charge <span class="cost free">FREE</span>
+            </div>
+            <div class="items total">
+              Total amount <span class="cost color" id="cost-color"></span>
+            </div>
+            <div class="shopButton">
+              <button
+                id="proceedToBuy"
+                class="continueButton buyButton"
+                onclick="directToCheckout(cartPage)"
+              >
+                Proceed To Buy
+              </button>
+            </div>
+            <button class="addItemsButton" onclick="directToHomePage(cartPage)">
+              Add Items
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="checkoutPage" class="homePage categoryPage">
+      <div class="navigationBar">
+        <img
+          class="logo"
+          src="./assets/logo.png"
+          alt="App Logo"
+          onclick="checkForCompletionAndDirectToHome(checkoutPage)"
+        />
+        <div
+          class="applicationName"
+          onclick="checkForCompletionAndDirectToHome(checkoutPage)"
+        >
+          HAPPY MART
+        </div>
+        <img
+          class="logo"
+          src="./assets/home.png"
+          alt="Profile Logo"
+          onclick="checkForCompletionAndDirectToHome(checkoutPage)"
+        />
+        <div id="searchSnackBar6" class="searchSnackBar">No items found</div>
+        <input
+          list="searchItems"
+          id="searchBar5"
+          type="text"
+          class="searchBar"
+        />
+        <datalist id="searchItems"> </datalist>
+        <img
+          class="searchIcon findIcon"
+          src="./assets/search.png"
+          alt="Search Logo"
+          onclick="checkForCompletionAndDirectToSearchPage(checkoutPage,searchBar5,searchSnackBar6)"
+        />
+        <img
+          class="logo"
+          src="./assets/profile.png"
+          alt="Profile Logo"
+          onclick="checkForCompletionAndDirectToProfile()"
+        />
+        <img
+          class="logo"
+          onclick="checkForCompletionAndDirectToCart(checkoutPage)"
+          src="./assets/shopping-cart.png"
+          alt="Cart Logo"
+        />
+      </div>
+      <div class="checkoutPage">
+        <div class="signUpText checkout">Checkout</div>
+        <div id="address" class="deliverSnackBar">Enter delivery Address</div>
+        <div class="profileDetails checkoutDetails">
+          <div>
+            <label for="doorNo" class="details">Delivery Address </label>
+            <img
+              class="edit"
+              src="./assets/pencil.png"
+              alt="Edit icon"
+              onclick="deliveryAddressEdits()"
+            />
+          </div>
+          <input
+            type="text"
+            placeholder=""
+            id="doorNo"
+            class="form inputForm"
+            autocomplete="off"
+            disabled="disabled"
+          />
+          <input
+            type="text"
+            placeholder=""
+            id="area"
+            class="form inputForm"
+            autocomplete="off"
+            disabled="disabled"
+          />
+          <input
+            type="text"
+            placeholder=""
+            id="city"
+            class="form inputForm"
+            autocomplete="off"
+            disabled="disabled"
+          />
+          <input
+            type="text"
+            placeholder=""
+            id="pincode"
+            class="form inputForm"
+            autocomplete="off"
+            disabled="disabled"
+          />
+          <div class="buttons alignDiv">
+            <button
+              id="cconfirmBtn"
+              class="joinButton loginButton cancelBtn align sizeBtn displayNone"
+              onclick="updateProfileNames()"
+            >
+              Confirm
+            </button>
+            <button
+              id="ccancelBtn"
+              class="joinButton loginButton cancelBtn align sizeBtn displayNone"
+              onclick="noUpdate()"
+            >
+              Cancel
+            </button>
+          </div>
+          <div class="orderSummary" id="orderSummary">Rs.0</div>
+
+          <button class="continueButton buyButton" onclick="finalPayement()">
+            Make Payment
+          </button>
+        </div>
+      </div>
+    </section>
+    <div id="modal1" class="modal1">
+      <div class="modalContent">
+        <div class="signUpText deliveryText">
+          Your Order has been placed successfully
+        </div>
+        <div class="buyButton deliveryBtn" onclick="directToHomePage(modal1)">
+          Continue Shopping
+        </div>
+      </div>
+    </div>
+    <div id="sub-menu" class="sub-menu">
+      <div
+        class="your-account"
+        id="your-account"
+        onclick="directToProfilePage()"
+      >
+        My Account
+      </div>
+      <div class="logout" id="logout" onclick="logout()">Logout</div>
+    </div>
+    <div class="confirmation-alert" id="confirm-delete-account">
+      <div class="delete-modal-content">
+        <div
+          class="delete-confirmation-message"
+          id="delete-confirmation-message"
+        >
+          Do you want to save changes
+        </div>
+        <div class="delete-confirmation">
+          <div
+            id="delete-confirm"
+            class="delete-confirm"
+            onclick="btnupdateProfileName()"
+          >
+            Confirm
+          </div>
+          <div id="delete-cancel" class="delete-cancel" onclick="btnnoUpdate()">
+            Cancel
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="confirmation-alert" id="delete-pop-up">
+      <div class="delete-modal-content">
+        <span
+          class="delete-close-button"
+          id="delete-close-button"
+          onclick="removePopUp()"
+          >X</span
+        >
+        <div class="delete-confirmation-message">
+          Enter the delivery Address to proceed further
+        </div>
+      </div>
+    </div>
+    <script src="scripts/web-api.js"></script>
+    <script src="scripts/start-up-page.js"></script>
+    <script src="scripts/home-page.js"></script>
+    <script src="scripts/sign-up-page.js"></script>
+    <script src="scripts/checkout.js"></script>
+    <script src="scripts/add-to-cart.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/profile.js"></script>
+    <script src="scripts/procced-to-buy.js"></script>
+    <script src="scripts/pop-up.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+@import "styles/start-page.css";
+@import "styles/login-page.css";
+@import "styles/home-page.css";
+@import "styles/category-page.css";
+@import "styles/profile-page.css";
+@import "styles/cart-page.css";
+@import "styles/checkout-page.css";
+@import "styles/modal.css";
+@import "styles/pop-up.css";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+}
